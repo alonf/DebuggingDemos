@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using NetMQ;
 using NetMQ.Sockets;
@@ -11,7 +8,7 @@ namespace ClientSide
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("Starting client side.");
             SendMessages();
@@ -21,7 +18,7 @@ namespace ClientSide
         {
             object zeroMqLock = new object();
 
-            using (var client = new RequestSocket(">tcp://localhost:5556")) // connect
+            using (var client = new RequestSocket(">tcp://localhost:7722")) // connect
             {
                 Parallel.For(1, 100, i =>
                 {

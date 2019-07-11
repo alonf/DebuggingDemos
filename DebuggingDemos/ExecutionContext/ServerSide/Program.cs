@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NetMQ;
 using NetMQ.Sockets;
 
@@ -10,9 +6,9 @@ namespace ServerSide
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            using (var server = new ResponseSocket("@tcp://localhost:5556"))
+            using (var server = new ResponseSocket("@tcp://localhost:7722"))
             {
                 string msg;
                 do
